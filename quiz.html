@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn & Play - Renewable Energy Quizzes</title>
+    <style>
+        /* Universal Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1e2a38;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #121212;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #f5c728;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+          padding-left: 35%;
+            display: flex;
+            justify-content: center; /* Center the main navigation items */
+            align-items: center;
+            width: 100%; /* Make nav take full width */
+        }
+
+        .center-nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .center-nav li {
+            margin: 0 25px;
+        }
+
+        .center-nav a {
+            color: #f5c728;
+            text-decoration: none;
+        }
+
+        .right-nav {
+            margin-left: auto; /* Push right nav to the right */
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: #f5c728;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2d2d2d;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+
+        .dropdown-content a {
+            color: #f5c728;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3e3e3e;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: #fff;
+        }
+
+        .login-btn {
+            color: #f5c728;
+            text-decoration: none;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .quiz-card {
+            background-color: #2a3b4d;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .option {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 6px;
+            background-color: #44566c;
+            color: white;
+            cursor: pointer;
+            text-align: left; /* Align option text to the left */
+        }
+
+        .option:disabled {
+            background-color: #777;
+            cursor: default;
+        }
+
+        .points {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 30px;
+        }
+
+        .quiz-image {
+            display: block;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 12px;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-around; /* Distribute sections evenly */
+            padding: 40px 20px;
+            flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+            gap: 20px; /* Space between footer sections */
+        }
+
+        .footer-section {
+            flex-basis: calc(50% - 40px); 
+            max-width: 200px; 
+
+        }
+
+        @media (min-width: 768px) {
+            .footer-section {
+                flex-basis: auto; /* Default to equal width on larger screens */
+            }
+        }
+
+        .footer-section h4 {
+            color: #f5c728;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-section p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #f5c728;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #f5c728;
+        }
+
+        .subscribe-input {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background-color: #333; /* Darker background for input */
+            color: #fff;
+        }
+
+        .subscribe-button {
+            padding: 10px 15px;
+            background-color: #f5c728;
+            border: none;
+            color: #121212;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none; /* Ensure no underline on the link inside */
+        }
+
+        .subscribe-button:hover {
+            background-color: #d4a620;
+        }
+        .play{padding-top: 30px;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="anka">
+        </div>
+        <nav>
+            <ul class="center-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="right-nav">
+                <div class="dropdown">
+                    <button class="dropbtn">☰ Menu</button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home</a>
+                     
+                        <a href="volunteering.html">Volunteering</a>
+                        <a href="quiz.html">Quizzes</a>
+                        <a href="marketplace.html">Marketplace</a>
+                        <a href="awareness">Awareness</a>
+                    </div>
+                </div>
+                <a href="login.html" class="login-btn">Login</a>
+            </div>
+        </nav>
+    </header>
+    <div class="play">
+    <br><h1>Learn & Play</h1></br>
+    <p style="text-align: center;">Test your knowledge, earn points, and get discounts in our marketplace</p>
+    <div class="points">Your Points: <span id="totalPoints">0</span></div>
+   </div>
+    <div class="quiz-container" id="quizContainer">
+        </div>
+
+    <script>
+        const questions = [
+            { title: "Solar Energy Basics", question: "What is the main component of a solar panel that converts sunlight into electricity?", options: ["Inverter", "Photovoltaic cell", "Battery", "Transformer"], answer: "Photovoltaic cell" },
+            { title: "Wind Power 101", question: "What is the minimum wind speed typically needed for a wind turbine to generate electricity?", options: ["5-10 mph", "1-3 mph", "20-25 mph", "30-35 mph"], answer: "5-10 mph" },
+            { title: "Water Conservation", question: "How much water can be saved by fixing a leaky faucet that drips once per second?", options: ["About 5 gallons per day", "About 3,000 gallons per year", "About 100 gallons per month", "About 500 gallons per week"], answer: "About 3,000 gallons per year" },
+            { title: "Energy Efficiency", question: "Which light bulb type is most energy efficient?", options: ["Incandescent", "Halogen", "CFL (Compact Fluorescent)", "LED"], answer: "LED" },
+            { title: "Geothermal Energy", question: "Geothermal energy is primarily derived from which part of the Earth?", options: ["Crust", "Mantle", "Core", "Surface"], answer: "Core" },
+            { title: "Hydropower", question: "What is the main advantage of hydropower?", options: ["It is expensive", "It produces no direct emissions", "It requires fossil fuels", "It is unpredictable"], answer: "It produces no direct emissions" },
+            { title: "Bioenergy", question: "Bioenergy is produced from which of the following?", options: ["Solar panels", "Wind turbines", "Organic materials", "Batteries"], answer: "Organic materials" },
+            { title: "Tidal Energy", question: "Tidal energy is generated by which natural phenomenon?", options: ["Sunlight", "Earthquakes", "Gravitational pull of the moon", "Rainfall"], answer: "Gravitational pull of the moon" },
+            { title: "Smart Grids", question: "What do smart grids help manage more efficiently?", options: ["Traffic", "Waste", "Electricity", "Water"], answer: "Electricity" },
+            { title: "Carbon Footprint", question: "Which action can reduce your carbon footprint the most?", options: ["Recycling", "Taking shorter showers", "Driving less", "Turning off lights"], answer: "Driving less" },
+            { title: "Electric Vehicles", question: "What powers an electric vehicle (EV)?", options: ["Gasoline", "Diesel", "Battery", "Steam"], answer: "Battery" },
+            { title: "Insulation", question: "What does home insulation help with the most?", options: ["Water conservation", "Air quality", "Energy efficiency", "Lighting"], answer: "Energy efficiency" },
+            { title: "Solar Thermal", question: "What does solar thermal technology primarily produce?", options: ["Electricity", "Heat", "Wind", "Fuel"], answer: "Heat" },
+            { title: "Battery Storage", question: "What is the main purpose of energy storage systems like batteries?", options: ["Increase electricity bills", "Store excess renewable energy", "Generate coal energy", "Reduce daylight"], answer: "Store excess renewable energy" },
+            { title: "Climate Change", question: "Which gas is most responsible for climate change?", options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"], answer: "Carbon dioxide" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let totalPoints = 0;
+
+        function renderQuestion(index) {
+            const container = document.getElementById('quizContainer');
+            container.innerHTML = '';
+
+            if (index >= questions.length) {
+                const score = totalPoints / 10;
+                container.innerHTML = `<div class="quiz-card"><h3>Quiz Completed!</h3><div class="result">Your Score: ${score}/15</div></div>`;
+                return;
+            }
+
+            const q = questions[index];
+            const card = document.createElement('div');
+            card.className = 'quiz-card';
+            card.innerHTML = `
+                <img src="https://www.funkidslive.com/wp-content/uploads/2017/05/ENQUZ-1200x675.jpg" alt="Renewable Energy" class="quiz-image">
+                <h3>${q.title}</h3>
+                <div class="question">${index + 1}. ${q.question}</div>
+                ${q.options.map(option => `<div class="option" onclick="checkAnswer(this, '${q.answer}')">${option}</div>`).join('')}
+            `;
+            container.appendChild(card);
+        }
+
+        function checkAnswer(element, correctAnswer) {
+            const selectedText = element.innerText;
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.onclick = null;
+                opt.style.cursor = 'default';
+            });
+
+            if (selectedText === correctAnswer) {
+                element.style.backgroundColor = '#4caf50';
+                totalPoints += 10;
+                document.getElementById('totalPoints').innerText = totalPoints;
+            } else {
+                element.style.backgroundColor = '#f44336';
+                // Optionally highlight the correct answer
+                options.forEach(opt => {
+                    if (opt.innerText === correctAnswer) {
+                        opt.style.backgroundColor = '#4caf50';
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                renderQuestion(currentQuestionIndex);
+            }, 1000);
+        }
+
+        renderQuestion(currentQuestionIndex);
+    </script>
+    <footer>
+        <div class="footer-section">
+            <h4>Anka</h4>
+            <p>Empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19y61egZ4t/">Facebook</a>
+                <a href="https://www.instagram.com/anka.eg/profilecard/?igsh=ZGQweDM5eml0ZXgy">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="awareness.html">Awareness</a></li>
+                <li><a href="volunteering.html">Volunteering</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="quiz.html">Quizzes</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Blog</a></li>
+                <li><a href="about.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
+            <input type="email" class="subscribe-input" placeholder="Your email address">
+            <button class="subscribe-button" type="button"> <a href="Register.html" style="color: inherit; text-decoration: none;">Subscribe </a></button>
+        </div>
+    </footer>
+</body>
+</html>

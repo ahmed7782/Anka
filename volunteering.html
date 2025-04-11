@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer Programs</title>
+  <style>
+    body {
+      background-color: #0c0f1d;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background-color: #1e2233;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      position: relative;
+    }
+
+    .card h2, .card p, .card span {
+      color: white;
+    }
+
+    .label {
+      background-color: #a051db;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .spots {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .image {
+      width: 100%;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .btn {
+      background-color: #2c3e75;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #3f4e91;
+    }
+.img1{width: 300px;}
+header {
+    background-color: #121212;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f5c728;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .center-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .center-nav li {
+    margin: 0 25px;
+    
+  }
+
+  .center-nav a {
+    color: #f5c728;
+    text-decoration: none;
+  }
+
+  .right-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Dropdown Menu Styles */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    background-color: transparent;
+    color: #f5c728;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d2d2d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+
+  .dropdown-content a {
+    color: #f5c728;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #3e3e3e;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    color: #fff;
+  }
+
+  .login-btn {
+    color: #f5c728; 
+    text-decoration: none;
+  }
+  footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+.footer-section {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-section h4 {
+    color: #f5c728;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f5c728;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f5c728;
+}
+
+.subscribe-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.subscribe-button {
+    padding: 10px 15px;
+    background-color: #f5c728;
+    border: none;
+    color: #121212;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.subscribe-button:hover {
+    background-color: #d4a620;
+}
+
+  </style>
+</head>
+<header>
+    <div class="logo">
+      <img src="logo.png"anka>
+    </div>
+    <nav>
+      <ul class="center-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="right-nav">
+        <div class="dropdown">
+          <button class="dropbtn">☰ Menu</button>
+          <div class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="volunteering.html">Volunteering</a>
+            <a href="quiz.html">Quizzes</a>
+            <a href="marketplace.html">Marketplace</a>
+            <a href="awareness.html">Awareness</a>
+          </div>
+        </div>
+        <a href="login.html" class="login-btn">Login</a>
+      </div>
+    </nav>
+  </header>
+<body>
+
+
+  <h1>Join Our Community</h1>
+  <h3>Make a difference by volunteering in renewable energy initiatives</h3>
+
+  <h2>Corporate & Adult Programs</h2>
+  <h3>Discover volunteering opportunities for professionals</h3>
+
+  <!-- Adult Card 1 -->
+  <div class="card">
+    <div class="image"style="background-image: url('solar_panels.jpg');"><img class="img1" src  ="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" > </div>
+    <span class="label">Adults</span>
+    <span class="spots">5 spots left</span>
+    <h2>Solar Panel Installation</h2>
+    <p>Help install solar panels in underserved communities. No prior experience required – our team will train you on-site.</p>
+    <div class="info">
+      📅 Every Saturday<br>
+      📍 Various Locations<br>
+      🕒 Flexible
+    </div>
+    <button class="btn">Apply Now →</button>
+  </div>
+
+  <!-- Adult Card 2 -->
+  <div class="card">
+    <div class="image" style="background-image: url('workshop.jpg');"><img class="img1" src  ="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" ></div>
+    <span class="label">Adults</span>
+    <span class="spots">2 spots left</span>
+    <h2>Renewable Energy Workshop Leader</h2>
+    <p>Lead workshops teaching adults about renewable energy concepts and practical applications.</p>
+    <div class="info">
+      📅 Monthly<br>
+      📍 Community Centers<br>
+      🕒 3 hours/session
+    </div>
+    <button class="btn">Apply Now →</button>
+  </div>
+
+  <h2>Kids Workshops & Activities</h2>
+  <h3>Fun and educational programs for young minds</h3>
+
+  <!-- Kids Card 1 -->
+  <div class="card">
+    <div class="image" style="background-image: url('eco_club.jpg');"><img class="img1" src  ="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"></div>
+    <span class="label" style="background-color: #db51a0;">Kids</span>
+    <span class="spots">10 spots left</span>
+    <h2>Eco Science Club</h2>
+    <p>Engage kids in exciting hands-on science experiments that demonstrate renewable energy concepts.</p>
+    <div class="info">
+      📅 Bi-weekly<br>
+      📍 Community Centers<br>
+      🕒 1.5 hours
+    </div>
+    <button class="btn">Apply Now →</button>
+  </div>
+
+  <!-- Kids Card 2 -->
+  <div class="card">
+    <div class="image" style="background-image: url('green_art.jpg');"><img class="img1" src  ="https://images.unsplash.com/photo-1551966775-a4ddc8df052b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"> </div>
+    <span class="label" style="background-color: #db51a0;">Kids</span>
+    <span class="spots">8 spots left</span>
+    <h2>Green Energy Art Project</h2>
+    <p>Let kids express their creativity by designing posters and crafts that reflect eco-friendly themes.</p>
+    <div class="info">
+      📅 Every 1st Saturday<br>
+      📍 Local Art Center<br>
+      🕒 2 hours
+    </div>
+    <button class="btn">Apply Now →</button>
+  </div>
+
+</body>
+<footer>
+    <div class="footer-section">
+      <h4>Anka</h4>
+      <p>Empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions.</p>
+      <div class="social-icons">
+        
+        <a href="https://www.facebook.com/share/19y61egZ4t/">Facebook</a>
+        <a href="https://www.instagram.com/anka.eg/profilecard/?igsh=ZGQweDM5eml0ZXgy">Instagram</a>
+        
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="awareness.html">Awareness</a></li>
+        <li><a href="volunteering.html">Volunteering</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="quiz.html">Quizzes</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">Blog</a></li>
+        <li><a href="about.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Stay Updated</h4>
+      <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
+      <input type="email" class="subscribe-input" placeholder="Your email address">
+      <button class="subscribe-button" type="button"> <a href="Register.html">Subscribe </a></button>
+    </div>
+  </footer>
+</html>

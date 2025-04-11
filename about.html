@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anka - Empowering a Sustainable Future</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f2c4a;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .mission, .vision, .offer, .features, .team {
+      background: #102e4c;
+    }
+
+    .vision {
+      background: #1b1e2e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+    }
+
+    .vision-text {
+      flex: 1;
+      padding: 20px;
+      max-width: 600px;
+    }
+
+    .vision-image {
+      flex: 1;
+      max-width: 300px;
+      padding: 20px;
+    }
+
+    .vision-image img {
+      width: 100%;
+      
+    }
+
+    h1, h2 {
+      color: #ffffff;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 0.3em;
+    }
+
+    h4 {
+      color: #ffc107;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #dddddd;
+    }
+
+    .feature-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background-color: #0f2c4a;
+      border: 1px solid #2e5a7e;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      text-align: left;
+    }
+
+    .feature h3 {
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      text-decoration: underline;
+    }
+
+    .team-member {
+      background-color: #0f2c4a;
+      border: 1px solid #2e5a7e;
+      border-radius: 12px;
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+     
+    }
+    
+
+    .team-member-placeholder {
+      background-color: #1b1e2e;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+    }
+    .header {
+    background-color: #121212;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+.footer-section {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer-section h4 {
+    color: #f5c728;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f5c728;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f5c728;
+}
+
+.subscribe-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.subscribe-button {
+    padding: 10px 15px;
+    background-color: #ffc800;
+    border: none;
+    color: #121212;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.subscribe-button:hover {
+    background-color: #000000;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #f5c728;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2d2d2d;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: #f5c728;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #3e3e3e;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: #fff;
+}
+
+.login-btn{color: #f5c728; 
+    text-decoration: none;}
+    .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header {
+    background-color: #121212;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f5c728;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .center-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .center-nav li {
+    margin: 0 25px;
+    
+  }
+
+  .center-nav a {
+    color: #f5c728;
+    text-decoration: none;
+  }
+
+  .right-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Dropdown Menu Styles */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    background-color: transparent;
+    color: #f5c728;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2d2d2d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+
+  .dropdown-content a {
+    color: #f5c728;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #3e3e3e;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    color: #fff;
+  }
+
+  .login-btn {
+    color: #f5c728; 
+    text-decoration: none;
+  }
+ .gold{color: #ffe207;}
+  </style>
+</head>
+<body>
+ 
+<header>
+  <div class="logo">
+    <img src="logo.png"anka>
+  </div>
+  <nav>
+    <ul class="center-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="right-nav">
+      <div class="dropdown">
+        <button class="dropbtn">☰ Menu</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+         
+          <a href="volunteering.html">Volunteering</a>
+          <a href="quiz.html">Quizzes</a>
+          <a href="marketplace.html">Marketplace</a>
+          <a href="awareness.html">Awareness</a>
+        </div>
+      </div>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
+  </nav>
+</header>
+
+  <section class="mission">
+    <h4>Our Mission</h4>
+    <h1>Empowering a Sustainable Future</h1>
+    <p>At Anka, we are dedicated to empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions through education, innovation, and collaboration.</p>
+  </section>
+
+  <section class="vision">
+    <div class="vision-text">
+      <h4>Our Vision</h4>
+      <h2>Inspired by Ancient Wisdom</h2>
+      <p>Like the Ankh symbol from ancient Egypt that represents eternal life, our platform symbolizes the sustainable cycle of renewable energy that brings life to our planet for generations to come.</p>
+      <p>We envision a world where clean energy is accessible to all, where communities are empowered with knowledge and tools to create sustainable solutions, and where each individual can contribute to a healthier planet.</p>
+    </div>
+    <div class="vision-image">
+      <img src="https://valleyforgeimpact.com/wp-content/uploads/2024/03/Blog6-The-Dawn-of-Renewable-Energy.jpg" alt="Ankh Symbol">
+    </div>
+  </section>
+
+  <section class="offer">
+    <h4>What We Offer</h4>
+    <h2>Our Comprehensive Approach</h2>
+    <p>We provide a multifaceted platform that combines education, technology, and community to make renewable energy accessible and actionable.</p>
+  </section>
+
+  <section class="features">
+    <div class="feature-boxes">
+      <div class="feature">
+        <h3>Educational Awareness</h3>
+        <p>Interactive Q&A sessions, TikTok-style videos, and DIY tutorials on renewable energy topics.</p>
+      </div>
+     
+      <div class="feature">
+        <h3>Community Engagement</h3>
+        <p>Volunteering opportunities for all ages and a marketplace connecting users with collaborators.</p>
+      </div>
+      <div class="feature">
+        <h3>Gamified Learning</h3>
+        <p>Fun quizzes and challenges that reward users with discounts for their eco-friendly efforts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <h4>Our Team</h4>
+    <h2>Passionate Experts & Innovators</h2>
+    <p>Our diverse team of renewable energy experts, educators, engineers, and community organizers work together to bring sustainable solutions to life.</p>
+    <div class="team-members">
+      <div class="team-member">
+        <div ><img class="team-member-placeholder" src="jana.jpeg" ></div>
+        <h3>Jana Aziz</h3>
+        <p><strong>CEO</strong></p>
+        <p>Leads the company, makes key decisions, and drives overall vision and growth.</p>
+      </div>
+      <div class="team-member">
+        <div><img class="team-member-placeholder" src="me.jpeg"></div>
+        <h3>𝔸𝕙𝕞𝕖𝕕 𝕊𝕙𝕖𝕙𝕒𝕓</h3>
+        <p><strong>Web & Design Manager</strong></p>
+        <p>Leads creative and technical teams to deliver high-impact, user-focused digital solutions.</p>
+        <h6 class="gold"> I don’t just build websites — I craft digital worlds where design leads and code commands.</h6>
+      </div>
+      <div class="team-member">
+        <div><img class="team-member-placeholder" src="hamza.jpeg"></div>
+        <h3>Hamza Ahmed</h3>
+        <p><strong>Position Title</strong></p>
+        <p>Brief description about the team member and their contribution to the Anka mission.</p>
+      </div>
+      <div class="team-members">
+        <div class="team-member">
+          <div><img class="team-member-placeholder" src="moath.jpeg"></div>
+          <h3>moath morad</h3>
+          <p><strong>Head of business development</strong></p>
+          <p>Drives strategic partnerships, identifies growth opportunities, and leads initiatives to expand the company's market presence and revenue.</p>
+        </div>
+        <div class="team-member">
+          <div><img class="team-member-placeholder" src="hana.jpeg"></div>
+          <h3>Hana surour</h3>
+          <p><strong>Eco HR Leader & Founder</strong></p>
+          <p>Pioneering sustainable initiatives through innovative business and marketing strategies.</p>
+        </div>
+        <div class="team-member">
+          <div><img class="team-member-placeholder" src="arwa.jpeg"></div>
+          <h3>Arwa mohamed</h3>
+          <p><strong>Position Title</strong></p>
+          <p>Experienced Marketing Manager and Content Creator with a strong eye for strategy, storytelling, and brand growth. Skilled in campaign planning, social media, and creating engaging content that drives results.</p>
+        </div>
+    </div>
+   
+      <div class="team-members">
+        <div class="team-member">
+          <div><img class="team-member-placeholder" src="ahmed.jpeg"></div>
+          <h3>Ahmed Mohsen</h3>
+          <p><strong>Software Developer</strong></p>
+          
+        </div>
+      <div class="team-member">
+        <div><img class="team-member-placeholder" src="youssef.jpeg"></div>
+        <h3>Youssef Ali</h3>
+        <p><strong>Software Developer</strong></p>
+        
+      </div>
+      <div class="team-member">
+        <div><img class="team-member-placeholder" src="asser.jpeg"></div>
+        <h3>Asser Sameh</h3>
+        <p><strong>Web Developer</strong></p>
+        <p>I bring design to life  building smooth, beautiful, and user-friendly web experiences.</p>
+      </div>
+  </div>
+  <div class="team-members">
+    <div class="team-member">
+      <div><img class="team-member-placeholder" src="hussein.png"></div>
+      <h3>Hussein Ahmed</h3>
+      <p><strong>Software Developer</strong></p>
+      
+    </div>
+  <div class="team-member">
+    <div><img class="team-member-placeholder" src="mohamed.jpeg"></div>
+    <h3>Mohamed Ali</h3>
+    <p><strong>Business Analysts</strong></p>
+   
+  </div>
+  </section>
+  <footer>
+    <div class="footer-section">
+        <h4>Anka</h4>
+        <p>Empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions.</p>
+        <div class="social-icons">
+           
+            <a href="https://www.facebook.com/share/19y61egZ4t/">Facebook</a>
+            <a href="https://www.instagram.com/anka.eg/profilecard/?igsh=ZGQweDM5eml0ZXgy">Instagram</a>
+           
+        </div>
+    </div>
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="awareness.html">Awareness</a></li>
+            <li><a href="volunteering.html">Volunteering</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Blog</a></li>
+            <li><a href="about.html">Privacy Policy</a></li>
+          
+        </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Stay Updated</h4>
+      <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
+      <input type="email" class="subscribe-input" placeholder="Your email address">
+      <a class="subscribe-button" href ="Register.html" >Subscribe</a>
+  </div>
+</footer>
+</body>
+</html>
