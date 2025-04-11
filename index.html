@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anka - Renewable Energy Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Learning</title>
     <style>
         * {
             margin: 0;
@@ -15,46 +15,28 @@
             font-family: Arial, sans-serif;
             background-color: #061d34;
             color: #ffffff;
-            position: relative;
-        }
-
-        /* Background Image Styles */
-        body::before {
-            content: "";
-            background-image: url('https://en.amwalalghad.com/wp-content/uploads/2024/08/Renewable-energy-ieefa-photo.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.50;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
         }
 
         header {
             background-color: #121212;
-            padding: 15px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            z-index: 10;
             flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             color: #f5c728;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .logo img {
-            height: 45px;
+            height: 55px;
             width: auto;
             object-fit: contain;
         }
@@ -67,30 +49,16 @@
         }
 
         .center-nav {
-            display: none; /* Hidden by default on mobile */
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .center-nav li {
-            margin: 0 15px;
-        }
-
-        .center-nav a {
-            color: #f5c728;
-            text-decoration: none;
-            font-size: 16px;
+            display: none;
         }
 
         .right-nav {
             margin-left: auto;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
         }
 
-        /* Dropdown Menu Styles */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -99,7 +67,7 @@
         .dropbtn {
             background-color: transparent;
             color: #f5c728;
-            padding: 8px 12px;
+            padding: 10px;
             font-size: 16px;
             border: none;
             cursor: pointer;
@@ -120,7 +88,6 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            font-size: 14px;
         }
 
         .dropdown-content a:hover {
@@ -136,225 +103,246 @@
         }
 
         .login-btn {
-            color: #f5c728;
+            color: #f5c728; 
             text-decoration: none;
-            font-size: 16px;
-            padding: 8px 12px;
         }
 
-        /* CONTENT STYLES */
-        .hero {
+        .gold {
+            color: #ffe207;
+        }
+
+        .faq-container {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            max-width: 850px;
+            margin: 3rem auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            border: 1px solid #333;
             text-align: left;
-            padding: 30px 20px;
+        }
+
+        .faq-container h2 {
+            font-size: 2rem;
+            color: #f0f0f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-container p {
+            margin-top: 0;
+            margin-bottom: 2rem;
+            color: #bbb;
+            font-size: 1rem;
+        }
+
+        details {
+            background-color: #262626;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            padding: 1rem;
+            transition: background 0.3s ease;
+            border: 1px solid #444;
+            text-align: right;
+        }
+
+        details:hover {
+            background-color: #333;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffcc66;
+            cursor: pointer;
+            list-style: none;
+            text-align: left;
+        }
+
+        summary::marker {
+            display: none;
+        }
+
+        details[open] summary {
+            color: #66d9ef;
+        }
+
+        details p {
+            margin-top: 0.8rem;
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .sub-section {
+            background-color: #282828;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .faq-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .faq-list li {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .faq-list li:hover {
+            background-color: #333;
+            cursor: pointer;
+        }
+
+        .videos, .projects {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #3a3a3a;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 100%;
             max-width: 100%;
-            position: relative;
-            z-index: 10;
         }
 
-        .badge {
-            display: inline-block;
-            background-color: #1f2c3c;
-            color: #f5c518;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-bottom: 15px;
+        .card h3 {
+            margin-top: 0;
         }
 
-        .hero h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            line-height: 1.3;
+        .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        .hero p {
-            font-size: 16px;
-            line-height: 1.5;
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 span {
+            color: #f8b400;
+        }
+
+        .subheading {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .video-card {
+            background-color: #1d2a3a;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            text-align: left;
+            color: #fff;
+            transition: transform 0.3s;
             margin-bottom: 20px;
         }
 
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+        .video-card:hover {
+            transform: translateY(-5px);
         }
 
-        .buttons a {
-            padding: 10px 18px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .get-started {
-            background-color: #f5c518;
-            color: #000;
-        }
-
-        .learn-more {
-            background-color: transparent;
-            border: 1px solid #fff;
-            color: #fff;
-        }
-
-        .image-preview img {
-            width: 100%;
-            border-radius: 16px;
-            margin: 30px 0;
-            max-height: 500px;
-            object-fit: cover;
-        }
-
-        /* PLATFORM SECTION */
-        .platform-section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: rgba(18, 30, 58, 0.8);
+        .thumbnail {
             position: relative;
-            z-index: 10;
         }
 
-        .platform-intro h4 {
-            color: #f1c40f;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .platform-intro h2 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .platform-intro p {
-            max-width: 600px;
-            margin: 0 auto 30px;
-            color: #ffffff;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .platform-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .platform-cards .card {
-            background-color: #0f1629;
-            border-radius: 8px;
-            padding: 20px;
+        .thumbnail img {
             width: 100%;
-            max-width: 300px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: auto;
+            display: block;
         }
 
-        .platform-cards .card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: white;
+        .duration {
+            position: absolute;
+            bottom: 8px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
         }
 
-        .platform-cards .card p {
-            font-size: 14px;
-            color: #ddd;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .platform-cards .card a {
-            color: #f1c40f;
-            text-decoration: none;
+        .title {
             font-weight: bold;
-            font-size: 14px;
+            font-size: 1rem;
+            padding: 10px;
         }
 
-        /* IMPACT SECTION */
-        .impact-section {
-            background: linear-gradient(to right, rgba(15, 26, 62, 0.8), rgba(27, 29, 27, 0.8));
-            padding: 50px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 10;
+        .description {
+            font-size: 0.85rem;
+            margin-top: 4px;
+            color: #aaa;
+            padding: 0 10px 10px;
         }
 
-        .impact-intro h4 {
-            color: #f1c40f;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .impact-intro h2 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            line-height: 1.3;
-        }
-
-        .impact-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .impact-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid #f1c40f;
-            border-radius: 10px;
-            padding: 20px 15px;
-            width: 160px;
-            text-align: center;
-        }
-
-        .impact-card h3 {
-            color: #f1c40f;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .impact-card p {
+        .button12 {
+            background-color: #007BFF;
             color: #fff;
-            font-size: 13px;
-            margin: 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 370px;
         }
-        
-        .How {
-            color: #f1c40f;
-        } 
-        
-        /* FOOTER STYLES */
+
+        .button12-a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         footer {
             background-color: #1a1a1a;
             color: #ffffff;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
-        
+
         .footer-section {
-            flex: 1 1 200px;
-            padding: 0 15px;
-            margin-bottom: 20px;
-            min-width: 200px;
+            flex: 1 1 100%;
+            padding: 15px;
         }
 
         .footer-section h4 {
             color: #f5c728;
             margin-bottom: 15px;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .footer-section p {
             margin-bottom: 15px;
             line-height: 1.5;
-            font-size: 14px;
         }
 
         .footer-section ul {
@@ -364,7 +352,6 @@
 
         .footer-section li {
             margin-bottom: 8px;
-            font-size: 14px;
         }
 
         .footer-section a {
@@ -377,12 +364,11 @@
         }
 
         .social-icons a {
-            margin-right: 10px;
+            margin-right: 15px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 14px;
             display: inline-block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .social-icons a:hover {
@@ -390,92 +376,69 @@
         }
 
         .subscribe-input {
-            padding: 8px 10px;
+            padding: 10px;
             margin-bottom: 10px;
             width: 100%;
             border: none;
             border-radius: 5px;
-            font-size: 14px;
         }
 
         .subscribe-button {
-            padding: 8px 12px;
-            background-color: #ffc800;
+            padding: 10px 15px;
+            background-color: #f5c728;
             border: none;
             color: #121212;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 14px;
-            width: 100%;
         }
 
         .subscribe-button:hover {
-            background-color: #000000;
-            color: #ffc800;
+            background-color: #d4a620;
         }
 
-        /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
         @media (min-width: 768px) {
-            header {
-                padding: 20px 30px;
-            }
-            
-            .logo {
-                font-size: 32px;
-                gap: 20px;
-            }
-            
-            .logo img {
-                height: 55px;
-            }
-            
             .center-nav {
                 display: flex;
                 position: static;
                 transform: none;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
             }
-            
-            .hero {
-                padding: 50px 30px;
-                max-width: 600px;
+
+            .card {
+                flex: 1 1 calc(45% - 20px);
+                max-width: calc(45% - 20px);
             }
-            
-            .hero h1 {
-                font-size: 32px;
+
+            .video-card {
+                width: calc(50% - 20px);
             }
-            
-            .platform-intro h2,
-            .impact-intro h2 {
-                font-size: 28px;
-            }
-            
-            .impact-card {
-                width: 200px;
-                padding: 30px 20px;
-            }
-            
-            .impact-card h3 {
-                font-size: 24px;
+
+            .footer-section {
+                flex: 1 1 calc(50% - 30px);
             }
         }
 
         @media (min-width: 992px) {
-            header {
-                padding: 20px 50px;
+            .card {
+                flex: 1 1 calc(30% - 20px);
+                max-width: calc(30% - 20px);
             }
-            
-            .hero {
-                padding: 60px 50px;
+
+            .video-card {
+                width: calc(33.333% - 20px);
             }
-            
-            .platform-section,
-            .impact-section {
-                padding: 60px 50px;
+
+            .footer-section {
+                flex: 1 1 calc(25% - 30px);
             }
-            
-            footer {
-                padding: 40px 50px;
+
+            .center-nav {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -483,7 +446,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Anka Logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <nav>
             <ul class="center-nav">
@@ -498,7 +461,7 @@
                         <a href="volunteering.html">Volunteering</a>
                         <a href="quiz.html">Quizzes</a>
                         <a href="marketplace.html">Marketplace</a>
-                        <a href="awareness">Awareness</a>
+                        <a href="awareness.html">Awareness</a>
                     </div>
                 </div>
                 <a href="login.html" class="login-btn">Login</a>
@@ -506,133 +469,138 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="badge">🌱 Renewable Energy Platform</div>
-        <h1>Powering a Sustainable Future Together</h1>
-        <p>
-            Anka empowers individuals and communities to adopt sustainable practices
-            and advance renewable energy solutions through education, innovation, and
-            collaboration.
-        </p>
-        <div class="buttons">
-            <a href="register.html" class="get-started">Get Started →</a>
-            <a href="about.html" class="learn-more">Learn More</a>
+    <div class="content">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to the most common questions about renewable energy</p>
+        
+            <details>
+                <summary>What is renewable energy?</summary>
+                <p>Renewable energy comes from sources that naturally replenish themselves, such as sunlight, wind, rain, tides, waves, and geothermal heat. Unlike fossil fuels, these energy sources won't run out and generally cause less environmental impact.</p>
+            </details>
+        
+            <details>
+                <summary>Why is renewable energy important?</summary>
+                <p>Renewable energy is crucial for reducing greenhouse gas emissions, decreasing dependence on imported fuels, creating economic development and jobs, and providing energy access to the billion people living without electricity.</p>
+            </details>
+        
+            <details>
+                <summary>How do solar panels work?</summary>
+                <p>Solar panels convert sunlight into electricity through the photovoltaic effect. When sunlight hits the semiconductor material in solar cells, it knocks electrons loose, creating an electric current that can be captured and used as electricity.</p>
+            </details>
+        
+            <details>
+                <summary>What is the most efficient renewable energy source?</summary>
+                <p>The efficiency of renewable energy sources varies by location and implementation. Hydroelectric power generally has the highest efficiency rate at 90%, followed by wind turbines at around 35-45%, while solar panels typically convert 15-20% of sunlight into electricity.</p>
+            </details>
+        
+            <details>
+                <summary>How can I implement renewable energy in my home?</summary>
+                <p>You can start with solar panels on your roof, small wind turbines if you have the space, solar water heaters, geothermal heat pumps, or even micro-hydropower systems if you have flowing water on your property. Many governments offer incentives to offset installation costs.</p>
+            </details>
         </div>
-    </section>
-  
-    <section class="platform-section">
-        <div class="platform-intro">
-            <h4>OUR PLATFORM</h4>
-            <h2 class="How">How Anka Helps You Make a Difference</h2>
-            <p>
-                Discover our comprehensive suite of tools and resources designed to help you contribute to
-                a sustainable future through renewable energy adoption.
-            </p>
-        </div>
-        <div class="platform-cards">
-            <div class="card">
-                <h3>Educational Awareness</h3>
-                <p>
-                    Access Q&A sessions, TikTok-style videos, and DIY tutorials on renewable energy topics.
-                </p>
-                <a href="awareness.html">Learn More</a>
-            </div>
-            <div class="card">
-                <h3>Fun quizes games</h3>
-                <p>
-                    Get your renewable energy ideas evaluated with success
-                </p>
-                <a href="quiz.html">Learn More</a>
-            </div>
-            <div class="card">
-                <h3>Volunteering Opportunities</h3>
-                <p>
-                    Find and join volunteering activities for both adults and kids in your community.
-                </p>
-                <a href="volunteering.html">Learn More</a>
-            </div>
-            <div class="card">
-                <h3>Sustainable Marketplace</h3>
-                <p>
-                    Connect with collaborators and discover sustainable products for your eco-friendly projects.
-                </p>
-                <a href="marketplace.html">Learn More</a>
-            </div>
-        </div>
-    </section>
 
-    <section class="impact-section">
-        <div class="impact-intro">
-            <h4>OUR IMPACT</h4>
-            <h2>Together We're Making a Difference</h2>
+        <div class="container">
+            <h1>Quick Learning <span>Videos</span></h1>
+            <div class="subheading">Watch bite-sized videos explaining renewable energy concepts</div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=xKxrkht7CpY&pp=ygUaVW5kZXJzdGFuZGluZyBTb2xhciBFbmVyZ3k%3D" target="_blank">
+                            <img src="https://i.ytimg.com/vi/xKxrkht7CpY/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCrVw1ydmqajZcsB9EScipY3nFygg" alt="Solar Video Thumbnail">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="title">Understanding Solar Energy</div>
+                        <div class="description">A quick overview of how solar energy works and its benefits.</div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=xy9nj94xvKA&t=31s&pp=ygUTd2luZCB0dXJiaW5lIGJhc2ljcw%3D%3D" target="_blank">
+                            <img src="https://i.ytimg.com/vi/xy9nj94xvKA/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLApLrpvnW3Fsn_m8-ONOwK6MMyW0Q" alt="Wind Video Thumbnail">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="title">Wind Power Basics</div>
+                        <div class="description">Learn the fundamentals of wind energy in just a few minutes.</div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail">
+                        <a href="https://www.youtube.com/watch?v=q8HmRLCgDAI&pp=ygUWSHlkcm8gUG93ZXIgUmV2b2x1dGlvbg%3D%3D" target="_blank">
+                            <img src="https://i.ytimg.com/vi/q8HmRLCgDAI/hq720.jpg?sqp=-oaymwFBCNAFEJQDSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGC4gVChyMA8=&rs=AOn4CLDNYehjLTskdqTyjmCHpNO117mvew" alt="Hydro Video Thumbnail">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="title">Hydro Power Revolution</div>
+                        <div class="description">Discover how water can generate clean electricity.</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="impact-cards">
-            <div class="impact-card">
-                <h3>10K+</h3>
-                <p>Users</p>
+
+        <div class="sub-section">
+            <h2 class="section-title">DIY Projects</h2>
+            <div class="projects">
+                <div class="card">
+                    <h3>Solar Phone Charger</h3>
+                    <img src="https://i.ebayimg.com/images/g/7DkAAOSwCNVioHbE/s-l1600.webp" alt="Solar Phone Charger">
+                    <p>Build a portable device that uses sunlight to charge your devices.</p>
+                    <button class="button">View Project</button>
+                </div>
+                <div class="card"> 
+                    <h3>Mini Wind Turbine</h3>
+                    <img src="https://www.inverter.com/images/thumbs/0002515_400w-vertical-axis-wind-turbine-12v24v_550.jpeg" alt="Mini Wind Turbine">
+                    <p>Construct a small wind turbine that can power LED lights.</p>
+                    <button class="button">View Project</button>
+                </div>
+                <div class="card">
+                    <h3>Home Energy Monitor</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdNgaguWOPwSeDf7lVx1sHYCbkm3UxJkV_Zw&s" alt="Home Energy Monitor">
+                    <p>Create a system to track your household energy consumption.</p>
+                    <button class="button">View Project</button>
+                </div>
             </div>
-            <div class="impact-card">
-                <h3>500+</h3>
-                <p>Completed Projects</p>
-            </div>
-            <div class="impact-card">
-                <h3>2,500+</h3>
-                <p>Volunteer Hours</p>
-            </div>
-            <div class="impact-card">
-                <h3>15K+</h3>
-                <p>CO2 Tons Saved</p>
-            </div>
+            <button class="button12"><a class="button12-a" href="https://www.google.com/search?q=DIY+ECO+Projects&oq=DIY+ECO+Projects&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgHGB4yDQgCEAAYhgMYgAQYigUyDQgDEAAYhgMYgAQYigUyBwgEEAAY7wUyCggFEAAYgAQYogQyCggGEAAYgAQYogTSAQkxNDE1MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8">Explore More Projects</a></button>
         </div>
-    </section>
-    
+    </div>
+
     <footer>
-      <div class="footer-section">
-          <h4>Anka</h4>
-          <p>Empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions.</p>
-          <div class="social-icons">
-              <a href="https://www.facebook.com/share/19y61egZ4t/">Facebook</a>
-              <a href="https://www.instagram.com/anka.eg/profilecard/?igsh=ZGQweDM5eml0ZXgy">Instagram</a>
-          </div>
-      </div>
-      <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-              <li><a href="awareness.html">Awareness</a></li>
-              <li><a href="volunteering.html">Volunteering</a></li>
-              <li><a href="marketplace.html">Marketplace</a></li>
-              <li><a href="quiz.html">Quiz</a></li>
-          </ul>
-      </div>
-      <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="about.html">Blog</a></li>
-              <li><a href="about.html">Privacy Policy</a></li>
-          </ul>
-      </div>
-      <div class="footer-section">
-          <h4>Stay Updated</h4>
-          <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
-          <input type="email" class="subscribe-input" placeholder="Your email address">
-          <a class="subscribe-button" href="Register.html">Subscribe</a>
-      </div>
-  </footer>
-  
-    <script>
-        function toggleDropdown() {
-            document.querySelector('.dropdown-content').classList.toggle('show');
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.closest('.dropbtn')) {
-                const dropdown = document.querySelector('.dropdown-content');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
-            }
-        };
-    </script>
+        <div class="footer-section">
+            <h4>Anka</h4>
+            <p>Empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19y61egZ4t/">Facebook</a>
+                <a href="https://www.instagram.com/anka.eg/profilecard/?igsh=ZGQweDM5eml0ZXgy">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="awareness.html">Awareness</a></li>
+                <li><a href="volunteering.html">Volunteering</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="quiz.html">Quizzes</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Blog</a></li>
+                <li><a href="about.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
+            <input type="email" class="subscribe-input" placeholder="Your email address">
+            <button class="subscribe-button" type="button"><a href="Register.html">Subscribe</a></button>
+        </div>
+    </footer>
 </body>
 </html>
