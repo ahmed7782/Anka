@@ -15,7 +15,7 @@
             font-family: Arial, sans-serif;
             background-color: #061d34;
             color: #ffffff;
-            position: relative; /* Needed for absolute positioning of the background image */
+            position: relative;
         }
 
         /* Background Image Styles */
@@ -24,36 +24,37 @@
             background-image: url('https://en.amwalalghad.com/wp-content/uploads/2024/08/Renewable-energy-ieefa-photo.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.50; /* Adjust opacity as needed */
+            opacity: 0.50;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Place behind other content */
+            z-index: -1;
         }
 
         header {
             background-color: #121212;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative; /* Ensure header is above the background */
+            position: relative;
             z-index: 10;
+            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: bold;
             color: #f5c728;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .logo img {
-            height: 55px;
+            height: 45px;
             width: auto;
             object-fit: contain;
         }
@@ -66,30 +67,27 @@
         }
 
         .center-nav {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            display: none; /* Hidden by default on mobile */
             list-style-type: none;
             margin: 0;
             padding: 0;
-            display: flex;
         }
 
         .center-nav li {
-            margin: 0 25px;
-
+            margin: 0 15px;
         }
 
         .center-nav a {
             color: #f5c728;
             text-decoration: none;
+            font-size: 16px;
         }
 
         .right-nav {
             margin-left: auto;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         /* Dropdown Menu Styles */
@@ -101,7 +99,7 @@
         .dropbtn {
             background-color: transparent;
             color: #f5c728;
-            padding: 10px;
+            padding: 8px 12px;
             font-size: 16px;
             border: none;
             cursor: pointer;
@@ -122,6 +120,7 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            font-size: 14px;
         }
 
         .dropdown-content a:hover {
@@ -139,16 +138,16 @@
         .login-btn {
             color: #f5c728;
             text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
         }
 
-
-
-        /* CONTENT STYLES FROM PROVIDED TEMPLATE */
+        /* CONTENT STYLES */
         .hero {
             text-align: left;
-            padding: 40px 20px;
-            max-width: 600px;
-            position: relative; /* Ensure content is above the background */
+            padding: 30px 20px;
+            max-width: 100%;
+            position: relative;
             z-index: 10;
         }
 
@@ -159,31 +158,34 @@
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 15px;
+            line-height: 1.3;
         }
 
         .hero p {
             font-size: 16px;
             line-height: 1.5;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .buttons a {
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
+            white-space: nowrap;
         }
 
         .get-started {
@@ -200,18 +202,17 @@
         .image-preview img {
             width: 100%;
             border-radius: 16px;
-            margin: 40px 0;
-            max-height: 1000px;
-
+            margin: 30px 0;
+            max-height: 500px;
+            object-fit: cover;
         }
-
 
         /* PLATFORM SECTION */
         .platform-section {
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
-            background-color: rgba(18, 30, 58, 0.8); /* Add a semi-transparent background */
-            position: relative; /* Ensure content is above the background */
+            background-color: rgba(18, 30, 58, 0.8);
+            position: relative;
             z-index: 10;
         }
 
@@ -222,16 +223,18 @@
         }
 
         .platform-intro h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
+            line-height: 1.3;
         }
 
         .platform-intro p {
             max-width: 600px;
-            margin: 0 auto 40px;
-            color: #ffffff; /* Changed text color for better visibility */
-            font-size: 16px;
+            margin: 0 auto 30px;
+            color: #ffffff;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
         .platform-cards {
@@ -245,7 +248,8 @@
             background-color: #0f1629;
             border-radius: 8px;
             padding: 20px;
-            width: 250px;
+            width: 100%;
+            max-width: 300px;
             text-align: left;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -260,20 +264,22 @@
             font-size: 14px;
             color: #ddd;
             margin-bottom: 15px;
+            line-height: 1.5;
         }
 
         .platform-cards .card a {
             color: #f1c40f;
             text-decoration: none;
             font-weight: bold;
+            font-size: 14px;
         }
 
         /* IMPACT SECTION */
         .impact-section {
-            background: linear-gradient(to right, rgba(15, 26, 62, 0.8), rgba(27, 29, 27, 0.8)); /* Add semi-transparent gradient */
-            padding: 60px 20px;
+            background: linear-gradient(to right, rgba(15, 26, 62, 0.8), rgba(27, 29, 27, 0.8));
+            padding: 50px 20px;
             text-align: center;
-            position: relative; /* Ensure content is above the background */
+            position: relative;
             z-index: 10;
         }
 
@@ -284,112 +290,194 @@
         }
 
         .impact-intro h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            line-height: 1.3;
         }
 
         .impact-cards {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
         .impact-card {
             background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid #f1c40f;
             border-radius: 10px;
-            padding: 30px 20px;
-            width: 200px;
+            padding: 20px 15px;
+            width: 160px;
             text-align: center;
         }
 
         .impact-card h3 {
             color: #f1c40f;
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 8px;
         }
 
         .impact-card p {
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
             margin: 0;
         }
-        .How{color:#f1c40f ;} 
+        
+        .How {
+            color: #f1c40f;
+        } 
+        
+        /* FOOTER STYLES */
         footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 20px;
-}
-.footer-section {
-    flex: 1;
-    padding: 0 15px;
-}
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 30px 20px;
+        }
+        
+        .footer-section {
+            flex: 1 1 200px;
+            padding: 0 15px;
+            margin-bottom: 20px;
+            min-width: 200px;
+        }
 
-.footer-section h4 {
-    color: #f5c728;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
+        .footer-section h4 {
+            color: #f5c728;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
 
-.footer-section p {
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
+        .footer-section p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
 
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer-section li {
-    margin-bottom: 8px;
-}
+        .footer-section li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
 
-.footer-section a {
-    color: #ffffff;
-    text-decoration: none;
-}
+        .footer-section a {
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-.footer-section a:hover {
-    color: #f5c728;
-}
+        .footer-section a:hover {
+            color: #f5c728;
+        }
 
-.social-icons a {
-    margin-right: 15px;
-    color: #ffffff;
-    text-decoration: none;
-}
+        .social-icons a {
+            margin-right: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
 
-.social-icons a:hover {
-    color: #f5c728;
-}
+        .social-icons a:hover {
+            color: #f5c728;
+        }
 
-.subscribe-input {
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-}
+        .subscribe-input {
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
 
-.subscribe-button {
-    padding: 10px 15px;
-    background-color: #ffc800;
-    border: none;
-    color: #121212;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    padding-top: 5px;
-}
+        .subscribe-button {
+            padding: 8px 12px;
+            background-color: #ffc800;
+            border: none;
+            color: #121212;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            width: 100%;
+        }
 
-.subscribe-button:hover {
-    background-color: #000000;
-}
+        .subscribe-button:hover {
+            background-color: #000000;
+            color: #ffc800;
+        }
+
+        /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+        @media (min-width: 768px) {
+            header {
+                padding: 20px 30px;
+            }
+            
+            .logo {
+                font-size: 32px;
+                gap: 20px;
+            }
+            
+            .logo img {
+                height: 55px;
+            }
+            
+            .center-nav {
+                display: flex;
+                position: static;
+                transform: none;
+            }
+            
+            .hero {
+                padding: 50px 30px;
+                max-width: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .platform-intro h2,
+            .impact-intro h2 {
+                font-size: 28px;
+            }
+            
+            .impact-card {
+                width: 200px;
+                padding: 30px 20px;
+            }
+            
+            .impact-card h3 {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            header {
+                padding: 20px 50px;
+            }
+            
+            .hero {
+                padding: 60px 50px;
+            }
+            
+            .platform-section,
+            .impact-section {
+                padding: 60px 50px;
+            }
+            
+            footer {
+                padding: 40px 50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -407,7 +495,6 @@
                     <button class="dropbtn">☰ Menu</button>
                     <div class="dropdown-content">
                         <a href="index.html">Home</a>
-                       
                         <a href="volunteering.html">Volunteering</a>
                         <a href="quiz.html">Quizzes</a>
                         <a href="marketplace.html">Marketplace</a>
@@ -504,10 +591,8 @@
           <h4>Anka</h4>
           <p>Empowering individuals and communities to adopt sustainable practices and advance renewable energy solutions.</p>
           <div class="social-icons">
-             
               <a href="https://www.facebook.com/share/19y61egZ4t/">Facebook</a>
               <a href="https://www.instagram.com/anka.eg/profilecard/?igsh=ZGQweDM5eml0ZXgy">Instagram</a>
-             
           </div>
       </div>
       <div class="footer-section">
@@ -517,7 +602,6 @@
               <li><a href="volunteering.html">Volunteering</a></li>
               <li><a href="marketplace.html">Marketplace</a></li>
               <li><a href="quiz.html">Quiz</a></li>
-              
           </ul>
       </div>
       <div class="footer-section">
@@ -526,16 +610,16 @@
               <li><a href="about.html">About Us</a></li>
               <li><a href="about.html">Blog</a></li>
               <li><a href="about.html">Privacy Policy</a></li>
-            
           </ul>
       </div>
       <div class="footer-section">
           <h4>Stay Updated</h4>
           <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
           <input type="email" class="subscribe-input" placeholder="Your email address">
-          <a class="subscribe-button" href ="Register.html" >Subscribe</a>
+          <a class="subscribe-button" href="Register.html">Subscribe</a>
       </div>
-  </footer> 
+  </footer>
+  
     <script>
         function toggleDropdown() {
             document.querySelector('.dropdown-content').classList.toggle('show');
@@ -550,42 +634,5 @@
             }
         };
     </script>
-
 </body>
-    <div id="mobile-warning" style="
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    color: #f5c728;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    z-index: 99999;
-    padding-top: 20%;
-">
-    <p>This site is best viewed in desktop mode.<br>Please switch to desktop mode to continue.</p>
-</div>
-
-<script>
-    function checkScreenSize() {
-        const warning = document.getElementById('mobile-warning');
-        if (window.innerWidth <= 768) {
-            warning.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        } else {
-            warning.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-    }
-
-    // Run on load
-    checkScreenSize();
-
-    // Keep checking on resize
-    window.addEventListener('resize', checkScreenSize);
-</script>
-
 </html>
