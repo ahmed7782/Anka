@@ -552,4 +552,40 @@
     </script>
 
 </body>
+    <div id="mobile-warning" style="
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #f5c728;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    z-index: 99999;
+    padding-top: 20%;
+">
+    <p>This site is best viewed in desktop mode.<br>Please switch to desktop mode to continue.</p>
+</div>
+
+<script>
+    function checkScreenSize() {
+        const warning = document.getElementById('mobile-warning');
+        if (window.innerWidth <= 768) {
+            warning.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        } else {
+            warning.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    }
+
+    // Run on load
+    checkScreenSize();
+
+    // Keep checking on resize
+    window.addEventListener('resize', checkScreenSize);
+</script>
+
 </html>
