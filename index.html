@@ -563,12 +563,17 @@
     color: #f5c728;
     font-family: Arial, sans-serif;
     font-size: 20px;
-    text-align: center;
     z-index: 99999;
-    padding: 20% 10px;
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 ">
-    <p style="margin-bottom: 30px;">🚫 This page can't open in mobile.</p>
+    <p style="margin-bottom: 20px;">🚫 This page can't open in mobile.</p>
     <p>Use this link on a desktop browser:</p>
     <input id="desktop-link" value="https://ahmed7782.github.io/Anka/" readonly style="
         width: 90%;
@@ -580,7 +585,6 @@
         border-radius: 5px;
         text-align: center;
     " />
-    <br>
     <button onclick="copyLink()" style="
         margin-top: 20px;
         padding: 10px 20px;
@@ -605,16 +609,16 @@
         input.select();
         input.setSelectionRange(0, 99999); // For mobile
         document.execCommand("copy");
-
         document.getElementById("copy-msg").textContent = "Link copied to clipboard!";
     }
 
     if (isMobile()) {
         const warning = document.getElementById('mobile-warning');
-        warning.style.display = 'block';
+        warning.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
 </script>
+
 
 
 </html>
