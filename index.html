@@ -552,40 +552,69 @@
     </script>
 
 </body>
-    <div id="mobile-warning" style="
+
+<div id="mobile-warning" style="
     display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #000;
     color: #f5c728;
     font-family: Arial, sans-serif;
     font-size: 20px;
     text-align: center;
     z-index: 99999;
-    padding-top: 20%;
+    padding: 20% 10px;
+    box-sizing: border-box;
 ">
-    <p>This site is best viewed in desktop mode.<br>Please switch to desktop mode to continue.</p>
+    <p style="margin-bottom: 30px;">🚫 This page can't open in mobile.</p>
+    <p>Use this link on a desktop browser:</p>
+    <input id="desktop-link" value="https://ahmed7782.github.io/Anka/" readonly style="
+        width: 90%;
+        max-width: 400px;
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+    " />
+    <br>
+    <button onclick="copyLink()" style="
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #f5c728;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    ">📋 Copy Link</button>
+    <p id="copy-msg" style="margin-top: 10px; font-size: 14px; color: #fff;"></p>
 </div>
 
 <script>
-    function checkScreenSize() {
-        const warning = document.getElementById('mobile-warning');
-        if (window.innerWidth <= 768) {
-            warning.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        } else {
-            warning.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
+    function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
-    // Run on load
-    checkScreenSize();
+    function copyLink() {
+        const input = document.getElementById("desktop-link");
+        input.select();
+        input.setSelectionRange(0, 99999); // For mobile
+        document.execCommand("copy");
 
-    // Keep checking on resize
-    window.addEventListener('resize', checkScreenSize);
+        document.getElementById("copy-msg").textContent = "Link copied to clipboard!";
+    }
+
+    if (isMobile()) {
+        const warning = document.getElementById('mobile-warning');
+        warning.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
 </script>
+
 
 </html>
