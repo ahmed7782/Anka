@@ -550,7 +550,6 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -602,7 +601,7 @@
 </div>
 
 <script>
-    function isMobile() {
+    function isMobileDevice() {
         return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
@@ -619,8 +618,9 @@
         document.body.style.overflow = 'auto';
     }
 
-    if (isMobile()) {
-        document.getElementById('mobile-warning').style.display = 'flex';
+    if (isMobileDevice()) {
+        const warning = document.getElementById('mobile-warning');
+        warning.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
 </script>
